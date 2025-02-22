@@ -48,6 +48,6 @@ Below is a snippet of the HTML code that structures the portfolio website:
     </main>
 </body>
 </html>
-
+```html
         
 This snippet represents the essential structure of my portfolio website, including a header, navigation, and an 'About Me' section. Additional elements such as an experience section, project highlights, and contact information were added too.
