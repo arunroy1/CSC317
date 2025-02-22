@@ -17,7 +17,7 @@ To build this portfolio website, I structured the HTML with semantic elements su
 ## Code Explanation:
 Below is a snippet of the HTML code that structures the portfolio website:
 
-'''html
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
