@@ -12,11 +12,12 @@
 The objective of this assignment was to create a personal portfolio website using HTML. The key tasks involved designing a well-structured web page that showcases personal information, education, experience, projects, and skills. This assignment also emphasized the importance of semantic HTML, accessibility, and clean code organization.
         
 ## Approach / What I Did:
-To build this portfolio website, I structured the HTML with semantic elements such as <header>, <nav>, <main>, and <footer>. The content was organized into clearly defined sections, making navigations. I included an image for a profile picture, used an ordered list for the navigation menu, and incorporated a responsive design approach to ensure compatibility across different devices. Additionally, I embedded a sample YouTube video that i created to showcase how I used <iframe>.
+To build this portfolio website, I structured the HTML with semantic elements such as header, nav, main, and footer. The content was organized into clearly defined sections, making navigations. I included an image for a profile picture, used an ordered list for the navigation menu, and incorporated a responsive design approach to ensure compatibility across different devices. Additionally, I embedded a sample YouTube video that i created to showcase how I used iframe.
         
 ## Code Explanation:
 Below is a snippet of the HTML code that structures the portfolio website:
 
+'''html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,5 +48,6 @@ Below is a snippet of the HTML code that structures the portfolio website:
     </main>
 </body>
 </html>
+
         
 This snippet represents the essential structure of my portfolio website, including a header, navigation, and an 'About Me' section. Additional elements such as an experience section, project highlights, and contact information were added too.
