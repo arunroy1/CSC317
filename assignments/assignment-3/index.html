@@ -8,6 +8,51 @@
     <meta name="keywords" content="portfolio, web development, student">
     <link rel="icon" type="image/LOGO" href="https://static-00.iconduck.com/assets.00/augmented-reality-icon-1024x1022-5ltmxbxf.png">
     <link rel="stylesheet" href="styles/styles.css" id="css-theme">
+        <style>
+        /* Theme Switcher Styling */
+        .theme-switcher {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            padding: 12px;
+            z-index: 1000;
+        }
+
+        .theme-switcher h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .theme-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .theme-button {
+            padding: 8px 12px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .theme-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .theme-button.active {
+            background-color: #007bff;
+            color: white;
+            border-color: #0069d9;
+        }
+    </style>
 </head>
 <body>
 
