@@ -1,0 +1,196 @@
+/*
+ Author: AI-Generated CSS
+ Reference Image: https://www.studioolimpo.it/
+ Prompt:
+ Create a minimalist CSS theme inspired by the aesthetics of Studio Olimpo's website. The design should emphasize simplicity, elegance, and high contrast. Use a monochrome color palette (black, white, and shades of gray) with smooth typography and generous spacing. The layout should feel spacious, clean, and refined.
+
+ Specific details:
+ - Color Scheme: White background (#ffffff), black text (#000000), gray accents (#888888)
+ - Typography: Large, high-contrast headings with sans-serif fonts ('Poppins' or 'Helvetica Neue')
+ - Layout: Centered sections with ample whitespace and smooth scrolling effects
+ - Navigation: Simple, understated menu with hover fade effects
+ - Buttons/Links: Subtle underline animations and smooth interactions
+ - Images: Full-width where applicable, with slight fade-in animations
+ */
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.8;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #000000;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: #f8f8f8;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #555555;
+}
+
+/* General Section Styling */
+section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #888888;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #000000;
+    border-bottom: 2px solid #000000;
+    display: inline-block;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+button {
+    background: transparent;
+    border: 2px solid #000000;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+/* Projects */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background: #000000;
+    padding: 2rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.contact-info a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.contact-info a:hover {
+    opacity: 0.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    header {
+        padding: 3rem 1rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px 10px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+    .nav-links {
+        gap: 0.5rem;
+    }
+}

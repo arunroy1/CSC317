@@ -1,0 +1,149 @@
+/*
+ Author: AI-Generated CSS
+ Prompt:
+ Create a modern, professional, and visually appealing CSS theme for Arun Roy's portfolio website. The design should have a clean layout with a dark-themed background and accent colors inspired by a sophisticated tech look. Use a professional, readable font like Inter or Lato. Headers should have a bold, futuristic appearance, while body text remains clean and simple. 
+
+ Specific details:
+ - Color Scheme: Dark background (#121212), white text (#ffffff), accent colors in green (#00c853) and blue (#00aaff).
+ - Typography: Headers in 'Lato', sans-serif; body text in 'Inter', sans-serif.
+ - Layout: Centered content with well-spaced sections and a max-width of 1000px for readability.
+ - Navigation bar: Sticky, dark-themed with green/blue hover effects.
+ - Profile image: Circular, outlined with a soft glow.
+ - Sections: Clearly defined with subtle separators.
+ - Projects/Skills: Grid layout for responsiveness.
+ - Buttons/Links: Smooth transitions with hover effects.
+ */
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+    text-align: center;
+}
+
+header {
+    padding: 2rem 1rem;
+    background: #1e1e1e;
+    text-align: center;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #00c853;
+    box-shadow: 0 0 10px rgba(0, 200, 83, 0.5);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #00c853;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #cccccc;
+}
+
+nav {
+    background-color: #1a1a1a;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00aaff;
+}
+
+section {
+    padding: 3rem 1rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #00aaff;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #00c853;
+    display: inline-block;
+}
+
+.project-grid, .experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card, .experience-card {
+    background: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover, .experience-card:hover {
+    transform: translateY(-5px);
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+.skills-list li {
+    background: #00c853;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #121212;
+}
+
+footer {
+    background: #1a1a1a;
+    padding: 2rem;
+}
+
+.contact-info a {
+    color: #00aaff;
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
