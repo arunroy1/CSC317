@@ -5,11 +5,6 @@
  * with added dark mode support and centered layouts
  */
 
-/* 
- * ROOT VARIABLES
- * From styles.css: Color scheme and spacing variables
- * From ai-2.css: Additional accent colors and gradient variables
- */
  :root {
     /* Primary color scheme from styles.css */
     --primary: #2A5C82;
