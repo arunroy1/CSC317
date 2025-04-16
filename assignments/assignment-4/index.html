@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Practice</title>
+</head>
+<body>
+    <h1>JavaScript Week 0 Practice</h1>
+    <button id="greetButton">Click Me!</button>
+    <div id="output"></div>
+    
+    <!-- Link to the JavaScript file -->
+    <script src="hello.js"></script>
+    
+    <!-- Additional script to add interactivity -->
+    <script>
+        // Attach an event listener to the button
+        document.getElementById("greetButton").addEventListener("click", function() {
+            // When the button is clicked, call the createMessage function from hello.js
+            // and display the returned message in the div with id "output"
+            document.getElementById("output").textContent = createMessage("JavaScript");
+        });
+    </script>
+</body>
+</html>
