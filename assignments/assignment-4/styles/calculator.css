@@ -1,123 +1,122 @@
-/* Base resets and layout */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  html, body {
-    height: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Calculator container */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body just provides background and font — no flexing */
+body {
+  background-color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #fff;
+}
+
+/* Center the calculator with auto margins */
+.calculator-container {
+  background-color: #1e1e1e;
+  border-radius: 16px;
+  padding: 16px;
+  width: 360px;
+  max-width: 90vw;
+  margin: 2rem auto;        /* ← center horizontally and give some top/bottom space */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Back‑to‑portfolio link sits inside the container now */
+.back-to-portfolio {
+  margin-bottom: 1rem;
+}
+.back-to-portfolio a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #f57c00;
+}
+.back-to-portfolio a:hover {
+  text-decoration: underline;
+}
+
+/* Display area */
+.calculator-display {
+  background-color: #000;
+  color: #fff;
+  font-size: 3rem;
+  text-align: right;
+  padding: 24px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* Buttons grid */
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 12px;
+}
+
+/* Base button styles */
+.btn {
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
+.btn:active {
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+/* Zero button spans two columns */
+.btn.zero {
+  grid-column: span 2;
+  border-radius: 32px;
+  text-align: left;
+  padding-left: 28px;
+}
+
+/* Number buttons */
+.btn.number {
+  background-color: #333;
+  color: #fff;
+}
+.btn.number:hover {
+  background-color: #444;
+}
+
+/* Utility buttons (AC, +/-, %) */
+.btn.utility {
+  background-color: #a5a5a5;
+  color: #000;
+}
+.btn.utility:hover {
+  background-color: #bdbdbd;
+}
+
+/* Operator buttons (+, -, ×, ÷, =) */
+.btn.operator {
+  background-color: #f57c00;
+  color: #fff;
+}
+.btn.operator:hover {
+  background-color: #ff9100;
+}
+
+/* Responsive tweaks */
+@media (max-width: 400px) {
   .calculator-container {
-    background-color: #1e1e1e;
-    border-radius: 16px;
-    padding: 16px;
-    width: 360px;
-    max-width: 90vw;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 12px;
   }
-  
-  /* Display area */
   .calculator-display {
-    background-color: #000;
-    color: #fff;
-    font-size: 3rem;
-    text-align: right;
-    padding: 24px 16px;
-    border-radius: 8px;
-    margin-bottom: 16px;
-    overflow-x: auto;
-    white-space: nowrap;
+    font-size: 2.5rem;
+    padding: 20px 12px;
   }
-  
-  /* Buttons grid */
-  .calculator-buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 12px;
-  }
-  
-  /* Base button styles */
   .btn {
-    font-size: 1.5rem;
-    border: none;
-    border-radius: 50%;
-    padding: 0;
-    aspect-ratio: 1 / 1;
-    cursor: pointer;
-    transition: transform 0.1s ease, opacity 0.1s ease;
+    font-size: 1.25rem;
   }
-  .btn:active {
-    transform: scale(0.95);
-    opacity: 0.8;
-  }
-  
-  /* Zero button spans two columns */
-  .btn.zero {
-    grid-column: span 2;
-    border-radius: 32px;
-    text-align: left;
-    padding-left: 28px;
-  }
-  
-  /* Number buttons */
-  .btn.number {
-    background-color: #333;
-    color: #fff;
-  }
-  .btn.number:hover {
-    background-color: #444;
-  }
-  
-  /* Utility buttons (AC, +/-, %) */
-  .btn.utility {
-    background-color: #a5a5a5;
-    color: #000;
-  }
-  .btn.utility:hover {
-    background-color: #bdbdbd;
-  }
-  
-  /* Operator buttons (+, -, ×, ÷, =) */
-  .btn.operator {
-    background-color: #f57c00;
-    color: #fff;
-  }
-  .btn.operator:hover {
-    background-color: #ff9100;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 400px) {
-    .calculator-container {
-      width: 100%;
-      padding: 12px;
-    }
-    .calculator-display {
-      font-size: 2.5rem;
-      padding: 20px 12px;
-    }
-    .btn {
-      font-size: 1.25rem;
-    }
-  }
-  
-  /* “Back to Portfolio” link styling */
-  .back-to-portfolio {
-    margin: 1rem 0 0 1rem;
-  }
-  .back-to-portfolio a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #f57c00;
-  }
-  .back-to-portfolio a:hover {
-    text-decoration: underline;
-  }  
+}
