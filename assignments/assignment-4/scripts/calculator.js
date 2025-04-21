@@ -1,16 +1,16 @@
 const displayEl     = document.getElementById('display');
 const calculationEl = document.getElementById('calculation');
-const memIndicator  = document.getElementById('mem-indicator');
+const mcBtn         = document.getElementById('mc');
 let expression = '';
 let memory     = 0;
 
-// Initialize UI
-updateMemoryIndicator();
+// Initial render & memory badge
 render();
+updateMemoryIndicator();
 
-// Attach listeners to all buttons in calculator area
+// Attach click listeners to every button
 document
-  .querySelectorAll('#calculator-area button')
+  .querySelectorAll('#calculator button')
   .forEach(btn => btn.addEventListener('click', () => handleInput(btn.value)));
 
 // Keyboard support
@@ -34,65 +34,82 @@ function handleInput(value) {
       expression = '';
       render();
       break;
+
     case '+/-':
       if (expression) {
-        expression = String(secureEval(expression) * -1);
+        expression = String( secureEval(expression) * -1 );
         render();
       }
       break;
+
     case '%':
       if (expression) {
-        expression = String(secureEval(expression) / 100);
+        expression = String( secureEval(expression) / 100 );
         render();
       }
       break;
+
     case '=':
       calculate();
       break;
+
     case 'back':
       expression = expression.slice(0, -1);
       render();
       break;
 
-    // Memory Cases
+    // *** Memory Operations ***
     case 'MC':
       memory = 0;
       updateMemoryIndicator();
       break;
+
     case 'MR':
+      // recall into both displays
       expression = String(memory);
       render();
       break;
+
     case 'M+':
       if (expression) {
-        memory += secureEval(expression);
+        // evaluate whatever's on screen
+        const val = secureEval(expression);
+        memory += val;
         updateMemoryIndicator();
+        // keep the result on screen so next M+ uses it
+        expression = String(val);
+        render();
       }
       break;
+
     case 'M-':
       if (expression) {
-        memory -= secureEval(expression);
+        const val = secureEval(expression);
+        memory -= val;
         updateMemoryIndicator();
+        expression = String(val);
+        render();
       }
       break;
 
     default:
+      // any number/operator just appends
       expression += value;
       render();
   }
 }
 
 function render() {
-  displayEl.value     = expression;
-  calculationEl.value = expression;
+  calculationEl.value = expression;  // top line always shows the raw expression
+  displayEl.value     = expression;  // big display mirrors until "="
 }
 
 function calculate() {
   try {
-    calculationEl.value = expression;
+    calculationEl.value = expression;       // lock expression at top
     const result = secureEval(expression);
-    expression = String(result);
-    render();
+    displayEl.value = result;               // show result big
+    expression = String(result);            // let further calc continue
   } catch {
     displayEl.value = 'Error';
     expression = '';
@@ -107,11 +124,5 @@ function secureEval(expr) {
 }
 
 function updateMemoryIndicator() {
-  if (memory !== 0) {
-    memIndicator.textContent = 'M';
-    memIndicator.classList.add('active');
-  } else {
-    memIndicator.textContent = '';
-    memIndicator.classList.remove('active');
-  }
+  mcBtn.classList.toggle('active', memory !== 0);
 }
