@@ -79,6 +79,23 @@ button:active { filter: brightness(1.2); }
   font-size: 1rem;
 }
 
+/* Back to Portfolio button */
+.back-btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background-color: #333;       /* dark grey button */
+  color: #f90;                  /* orange text */
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #555;       /* lighter grey on hover */
+  color: #fff;                  /* white text on hover */
+}
+
 /* Responsive */
 @media (max-width:400px){
   #calculator { grid-template-columns: repeat(4,60px); grid-auto-rows:60px; gap:5px; }
