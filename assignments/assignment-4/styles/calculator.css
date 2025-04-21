@@ -1,130 +1,80 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Basic reset & layout */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   background: #000;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-               Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-               sans-serif;
   color: #fff;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Calculator container */
-.calculator-container {
-  width: 360px;
-  max-width: 90vw;
-  margin: auto;
-  padding: 16px;
-  background: #1e1e1e;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
-}
-
-/* Back to Portfolio link */
-.back-to-portfolio {
-  margin: 1rem auto;
-  width: 360px;
-  max-width: 90vw;
-}
-.back-to-portfolio a {
-  color: #f57c00;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 16px;
-  display: inline-block;
-}
-.back-to-portfolio a:hover {
-  text-decoration: underline;
-}
-
-/* Display */
-.calculator-display {
-  background: #000;
-  font-size: 3rem;
-  text-align: right;
-  padding: 24px 16px;
-  border-radius: 8px;
-  margin-bottom: 16px;
-  white-space: nowrap;
-  overflow-x: auto;
-}
-
-/* Buttons grid */
-.calculator-buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-
-/* Base button */
-.btn {
-  display: flex;
   align-items: center;
+  font-family: sans-serif;
+  min-height: 100vh;
   justify-content: center;
-  aspect-ratio: 1/1;
+}
+
+/* Calculator grid */
+#calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-auto-rows: 80px;
+  gap: 10px;
+  background: #111;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+/* Display fields */
+#calculation, #display {
+  grid-column: 1 / -1;
+  background: transparent;
+  border: none;
+  padding: 0 10px;
+  text-align: right;
+  font-family: monospace;
+}
+#calculation {
+  color: #888;
+  font-size: 1.2rem;
+  height: 40px;
+}
+#display {
+  color: #fff;
+  font-size: 2rem;
+  height: 60px;
+}
+
+/* Buttons */
+button {
   border: none;
   border-radius: 50%;
   font-size: 1.5rem;
   cursor: pointer;
-  transition: transform 0.1s, opacity 0.1s;
+  outline: none;
+  transition: filter 0.1s;
 }
-.btn:active {
-  transform: scale(0.95);
-  opacity: 0.8;
-}
+button:active { filter: brightness(1.2); }
 
-/* Zero button */
-.btn.zero {
-  grid-column: span 2;
-  border-radius: 32px;
-  justify-content: flex-start;
-  padding-left: 28px;
-  aspect-ratio: auto;
-  width: auto;
-}
-
-/* Number buttons */
-.btn.number {
+/* Number keys */
+.num {
   background: #333;
   color: #fff;
 }
-.btn.number:hover {
-  background: #444;
-}
-
-/* Utility buttons */
-.btn.utility {
-  background: #a5a5a5;
+/* Operators */
+.op {
+  background: #f90;
   color: #000;
 }
-.btn.utility:hover {
-  background: #bdbdbd;
-}
-
-/* Operator buttons */
-.btn.operator {
-  background: #f57c00;
+/* Special functions (AC, +/-, %) */
+.fn {
+  background: #666;
   color: #fff;
 }
-.btn.operator:hover {
-  background: #ff9100;
-}
+/* Zero spans two columns */
+.zero { grid-column: span 2; }
 
-/* Responsive adjustments */
+/* Responsive tweak */
 @media (max-width: 400px) {
-  .calculator-container {
-    padding: 12px;
-  }
-  .calculator-display {
-    font-size: 2.5rem;
-    padding: 20px 12px;
-  }
-  .btn {
-    font-size: 1.25rem;
-  }
+  #calculator { grid-template-columns: repeat(4, 60px); grid-auto-rows: 60px; gap: 5px; }
+  button { font-size: 1.2rem; }
+  #display { font-size: 1.6rem; }
 }
