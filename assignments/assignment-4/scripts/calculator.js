@@ -4,7 +4,6 @@ const mcBtn         = document.getElementById('mc');
 let expression = '';
 let memory     = 0;
 
-// Initial render & memory badge
 render();
 updateMemoryIndicator();
 
@@ -119,7 +118,6 @@ function calculate() {
 function secureEval(expr) {
   const safe = /^[0-9+\-*/%.() ]+$/;
   if (!safe.test(expr)) throw new Error('Invalid characters');
-  // eslint-disable-next-line no-new-func
   return Function('"use strict";return(' + expr + ')')();
 }
 

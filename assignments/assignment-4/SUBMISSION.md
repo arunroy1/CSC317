@@ -2,6 +2,8 @@
 
 **Name:** Arun Roy  
 **Student ID:** 924419103 
+**GitHub Username:** arunroy1  
+**Assignment Number:** 4
 
 **GitHub Repository:**  
 https://github.com/arunroy1/CSC317
