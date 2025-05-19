@@ -3,56 +3,42 @@
 **Name:** Arun Roy  
 **Student ID:** 924419103 
 **GitHub Username:** arunroy1  
-**Assignment Number:** 4
+**Assignment Number:** final
 
 **GitHub Repository:**  
 https://github.com/arunroy1/CSC317
 
 **Live Demo:**  
-https://arunroy1.github.io/CSC317/assignments/assignment-4/
+https://arunroy1.github.io/CSC317/assignments/final/
 
 ---
 
-## Part 1: JavaScript Calculator
+Submission Reflection
 
-I wanted to build a calculator that feels like the one you use on your phone—sleek, responsive, and easy to reach for simple math or quick conversions.
+Working on Recipe Explorer has been a great learning experience, especially around styling and user authentication. Here’s a quick look at what I focused on and learned:
 
-I started with the basics: addition, subtraction, multiplication, and division. From there, I added percentage, sign‑toggle (±), and clear/backspace functions so it behaves exactly how you’d expect. You can also type on your keyboard—numbers, operators, Enter for equals, Escape for clear, and Backspace to delete.
+CSS & Visual Design
 
-**Memory Features** 
+Brand Consistency: I experimented with color palettes, typography (using Raleway), and spacing to create a clean, appetizing look that ties the entire site together.
 
-- **M+**: stash the current result into memory  
-- **M-**: subtract the current result from memory  
-- **MR**: pull that stored value back onto the screen  
-- **MC**: clear memory (and the button highlights when there’s something saved!)  
+Responsive Layouts: I wrote flexible CSS to ensure forms, recipe cards, and images adapt nicely to different screen sizes—thanks to media queries and fluid units.
 
-Just compute or enter a number, hit M+ or M–, and recall it anytime with MR. If there’s a value in memory, MC lights up to remind you.
+User-Friendly Forms: From the signup/login pages to the comment and rating sections, I styled form elements and feedback messages (errors, success states) so users always know what’s happening.
 
-I also made sure the calculator never runs unsafe code: before evaluating anything, it checks the expression contains only digits, operators, parentheses, and decimals.
+Authentication Features
 
----
+Sign Up & Log In: Implemented secure password hashing with bcrypt, plus form validation and clear error messages for missing or invalid fields.
 
-## Part 2: Portfolio Integration
+Session Management: Learned to configure express-session with connect-mongo to keep users logged in, and protect routes (like Add Recipe and Profile) behind authentication checks.
 
-For this part, I brought my portfolio from Assignment 3 into a new folder and added a **Projects** section. The JavaScript Calculator is the first card:
+Profile Menu: Built a dropdown that reveals account details (and a password show/hide toggle), and wired up logout functionality with a confirmation step.
 
-- A snug thumbnail that scales for desktop and mobile  
-- A brief, friendly description of what it does  
-- A “Live Demo” link to open the calculator in a new tab  
-- A “Back to Portfolio” link on the calculator page itself  
+Takeaways
 
-Everything sits neatly in `assignments/assignment-4/` with clear paths and files organized under `styles/`, `scripts/`, and `images/`.
+Collaboration: Coordinating merges and pull requests taught me more about Git branching strategies and resolving conflicts.
 
----
+End-to-End Flow: Seeing how CSS, EJS, Express routes, node.js and MongoDB work together end-to-end gave me a stronger grasp of full-stack development.
 
-## What I Learned
+User Experience Matters: Small visual cues—hover states, error highlights, loading indicators—make a surprisingly big difference in how comfortable people feel using your app.
 
-- **Balancing usability and security** by sanitizing input before using the Function constructor.  
-- **CSS Grid magic** to create a compact layout where the zero button spans two columns and memory buttons blend in smoothly.  
-- **Simple state management**—keeping track of `expression` and `memory` in JavaScript, then updating the UI with every change.
-
----
-
-## Acknowledgments
-
-Big thanks to MDN Web Docs for clear guides on CSS Grid, event handling, and safe eval patterns. And also thanks to Stack Overflow for the tips on memory button logic and keyboard support.  
+I’m proud of what we've made for this project, and I’m excited to keep refining both the look and the behind-the-scenes logic in future iterations.
